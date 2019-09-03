@@ -57,6 +57,6 @@ ghauth({
       console.log('Reloading page as we mutated it')
       i--
     }
-    if (list.data.length < 100) break
+    if (!goback && list.data.length < 100) break
   }
 })
