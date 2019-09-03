@@ -1,0 +1,23 @@
+{
+  "name": "github-unwatch-org",
+  "version": "0.0.0",
+  "description": "Unwatch all repos in a series of orgs",
+  "dependencies": {
+    "@octokit/rest": "^16.28.8",
+    "ghauth": "^3.2.1"
+  },
+  "bin": {
+    "github-unwatch-org": "./bin.js"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mafintosh/github-unwatch-org.git"
+  },
+  "author": "Mathias Buus (@mafintosh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafintosh/github-unwatch-org/issues"
+  },
+  "homepage": "https://github.com/mafintosh/github-unwatch-org"
+}
