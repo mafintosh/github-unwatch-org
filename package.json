@@ -1,6 +1,6 @@
 {
   "name": "github-unwatch-org",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Unwatch all repos in a series of orgs",
   "dependencies": {
     "@octokit/rest": "^16.28.8",
