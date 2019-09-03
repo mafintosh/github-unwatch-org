@@ -11,7 +11,7 @@ if (!process.argv[2]) {
 
 const unwatching = new Set()
 
-for (const line of fs.readFileSync(process.argv[2]).trim().split('\n')) {
+for (const line of fs.readFileSync(process.argv[2], 'utf-8').trim().split('\n')) {
   const l = line.trim().toLowerCase()
   if (!l) continue
   unwatching.add(l)
@@ -39,9 +39,12 @@ ghauth({
       page: i
     })
 
+    let goback = false
+
     for (const { full_name } of list.data) {
       const org = full_name.split('/')[0].toLowerCase()
       if (unwatching.has(org)) {
+        goback = true
         console.log('Unwatching ' + full_name)
         await o.activity.deleteRepoSubscription({
           owner: org,
@@ -50,6 +53,10 @@ ghauth({
       }
     }
 
+    if (goback) {
+      console.log('Reloading page as we mutated it')
+      i--
+    }
     if (list.data.length < 100) break
   }
 })
